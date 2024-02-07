@@ -14,6 +14,7 @@ phases:
       - "unzip -o terraform.zip"
       - chmod +x terraform
       - mv terraform /usr/local/bin/
+      - cd -
   pre_build:
     commands:
       - echo setting AWS env vars
