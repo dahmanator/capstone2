@@ -10,7 +10,7 @@ phases:
   build:
     commands:
       - echo build Docker image on `date`
-      - docker build -t group1-cap2:latest .
+      - docker build -t grp1-tf-cp2-ecr-repo:latest .
       - docker tag grp1-tf-cp2-ecr-repo:latest 962804699607.dkr.ecr.us-west-2.amazonaws.com/grp1-tf-cp2-ecr-repo:latest
   post_build:
     commands:
