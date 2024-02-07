@@ -6,6 +6,11 @@ terraform {
     }
   }
   required_version = ">= 1.2.0"
+  backend "s3" {
+    bucket = "grp1-tf-cp2-cicd-state"
+    key    = "state/remote-state"
+	  region = "us-west-2"
+  }
 }
 
 provider "aws" {

@@ -18,8 +18,8 @@ phases:
   pre_build:
     commands:
       - echo setting AWS env vars
-      - export AWS_ACCESS_KEY_ID=$(pass TF_key_value)
-      - export AWS_SECRET_ACCESS_KEY=$(pass TF_secret_value)
+      - export AWS_ACCESS_KEY_ID=$TF_key_value
+      - export AWS_SECRET_ACCESS_KEY=$TF_secret_value
       - echo logging in to AWS ECR...
       - aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 962804699607.dkr.ecr.us-west-2.amazonaws.com
   build:
@@ -27,6 +27,7 @@ phases:
       - pwd
       - cd "tf/"
       - terraform init 
+      - terraform state list
       - terraform apply -auto-approve
       - cd ".."
       - echo build Docker image on `date`
