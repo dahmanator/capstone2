@@ -11,9 +11,9 @@ phases:
     commands:
       - echo build Docker image on `date`
       - docker build -t group1-cap2:latest .
-      - docker tag group1-cap2:latest 962804699607.dkr.ecr.us-west-2.amazonaws.com/group1-capstone2-repo:latest
+      - docker tag grp1-tf-cp2-ecr-repo:latest 962804699607.dkr.ecr.us-west-2.amazonaws.com/grp1-tf-cp2-ecr-repo:latest
   post_build:
     commands:
       - echo build Docker image complete `date`
       - echo push latest Docker images to ECR...
-      - docker push 962804699607.dkr.ecr.us-west-2.amazonaws.com/group1-capstone2-repo:latest
+      - docker push 962804699607.dkr.ecr.us-west-2.amazonaws.com/grp1-tf-cp2-ecr-repo:latest
