@@ -29,8 +29,8 @@ resource "aws_s3_bucket_versioning" "grp1-tf-cp2-bucket-version" {
 resource "aws_s3_object" "grp1-tf-cp2-bucket-add" {
   bucket   = aws_s3_bucket.grp1-tf-cp2-bucket.id
   key      = "todo-data.json"
-  source   = "../react-new-todo/todo-data.json"
-  etag     = filemd5("../react-new-todo/todo-data.json")
+  source   = "../todo-data.json"
+  etag     = filemd5("../todo-data.json")
 }
 
 
